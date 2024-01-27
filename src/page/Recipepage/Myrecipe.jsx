@@ -1,7 +1,6 @@
 import { useEffect , useState} from "react";
 import React from "react";
-import BodyContainer from "../components/Recipepage/BodyContainer";
-import Headerbar from "../components/Recipepage/Headerbar";
+import Headerbar from "../../components/Recipecomponents/Headerbar";
 import axios from "axios";
 
 function Myrecipe() {
@@ -30,7 +29,7 @@ function Myrecipe() {
                     </h1>
                 ))}
 
-            <BodyContainer />
+          
 
         </div>
     );
