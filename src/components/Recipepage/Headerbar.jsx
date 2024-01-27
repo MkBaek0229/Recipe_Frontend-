@@ -2,7 +2,9 @@ import Masonry from "./Masonry";
 import Menubutton from "../Menubutton";
 import { Link } from "react-router-dom";
 
+
 function Headerbar() {
+
     return (  
     <div className="border border-solid border-black relative min-w-[100%] p-3 mx-auto">
         <Link to={'/'}><Menubutton name="뒤로가기"/></Link>
