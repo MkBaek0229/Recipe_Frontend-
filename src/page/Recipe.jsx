@@ -1,4 +1,4 @@
-import Headerbar from "../components/Headerbar";
+import Headerbar from "../components/Recipepage/Headerbar";
 
 function Recipe() {
     return ( 

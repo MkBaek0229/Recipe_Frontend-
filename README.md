@@ -43,3 +43,9 @@ export default {
 ```
 npm install react-router-dom
 ```
+
+### 4. HTTP 요청을 위한 axios 도입
+
+```
+npm install axios
+```
