@@ -39,3 +39,9 @@ export default {
 ```
 
 - [x] HTML에서 ouput.css 사용
+
+### 3. React router 도입
+
+```
+npm install react-router-dom
+```
