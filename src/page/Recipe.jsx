@@ -1,7 +1,11 @@
+import Menubutton from "../components/Menubutton";
+
 function Recipe() {
     return ( 
         <>
-        <h1>레시피창입니다.</h1>
+        <Menubutton name="뒤로가기"/>
+        <Menubutton name="내 레시피"/>
+        <Menubutton name="레시피 만들기"/>
         </>
      );
 }

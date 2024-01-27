@@ -38,8 +38,6 @@ export default {
 @tailwind utilities;
 ```
 
-- [x] HTML에서 ouput.css 사용
-
 ### 3. React router 도입
 
 ```
