@@ -1,8 +1,41 @@
-# React + Vite
+# 나만의 레시피 기록 웹앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Front End 작업내역순서
 
-Currently, two official plugins are available:
+### 1. 최초 파일셋팅 (Page 폴더생성)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. 테일윈드 css 도입
+
+- [x] 테일윈드 패키지 설치
+- [x] 설정 파일 추가
+
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+- [x] tailwind.config.js에 다음 내용 추가
+
+```
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+- [x] 내 css파일에 다음 내용 추가 index.css
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+- [x] HTML에서 ouput.css 사용
