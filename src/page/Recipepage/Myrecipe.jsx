@@ -27,7 +27,7 @@ function Myrecipe() {
         <div>   
             <Headerbar />
                 {Rlist.map((list) => (
-                      <Card list={list} />
+                      <Card list={list} getList={getList} />
                 ))}
 
           

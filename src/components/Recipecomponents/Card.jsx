@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-function Card({ list }) {
+function Card({ list, getList }) {
   const [isEditing, setIsEditing] = useState(false); // 편집 모드 여부를 나타내는 상태
   const [editedField, setEditedField] = useState(list.field); // 편집된 필드 값
   const [editedDescription, setEditedDescription] = useState(list.description); // 편집된 설명 값
@@ -9,20 +9,23 @@ function Card({ list }) {
   console.log();
 
   // 편집 모드로 전환하는 함수
-  const handleEditClick = () => {
+  const handleEditClick = (e) => {
+    e.stopPropagation(); // 이벤트 전파 중단
     setIsEditing(true);
   };
 
   // 편집 취소하는 함수
-  const handleCancelEdit = () => {
+  const handleCancelEdit = (e) => {
     setIsEditing(false);
     setEditedField(list.field);
     setEditedDescription(list.description);
     setEditedCookingTime(list.cooking_time);
+    e.stopPropagation(); // 이벤트 전파 중단
   };
 
   // 수정된 값을 저장하는 함수
-  const handleSaveEdit = () => {
+  const handleSaveEdit = (e) => {
+    e.stopPropagation(); // 이벤트 전파 중단
     // 수정할 데이터의 ID
     const recipeId = list.recipe_id; 
     console.log(recipeId);
@@ -39,6 +42,7 @@ function Card({ list }) {
     axios.patch(`https://recipe-backend.fly.dev/api/v1/recipes/${recipeId}`, requestData)
         .then((response) => {
             console.log(response.data.data);
+            getList();
         })
         .catch((error) => {
             console.log(error);
@@ -65,6 +69,7 @@ function Card({ list }) {
     axios.delete(`https://recipe-backend.fly.dev/api/v1/recipes/${recipeId}`)
       .then((response) => {
           // 삭제 성공 시 필요한 작업 수행
+          getList();
           console.log('카드 삭제 성공:', response.data);
       })
       .catch((error) => {
@@ -85,17 +90,20 @@ function Card({ list }) {
                   value={editedField}
                   onChange={(e) => setEditedField(e.target.value)}
                   className="mb-2 px-3 py-2 rounded-lg border border-gray-300"
+                  onClick={(e) => e.stopPropagation()} // 이벤트 전파 중단
                 />
                 <textarea
                   value={editedDescription}
                   onChange={(e) => setEditedDescription(e.target.value)}
                   className="mb-2 px-3 py-2 rounded-lg border border-gray-300"
+                  onClick={(e) => e.stopPropagation()} // 이벤트 전파 중단
                 ></textarea>
                 <input
                   type="text"
                   value={editedCookingTime}
                   onChange={(e) => setEditedCookingTime(e.target.value)}
                   className="mb-2 px-3 py-2 rounded-lg border border-gray-300"
+                  onClick={(e) => e.stopPropagation()} // 이벤트 전파 중단
                 />
               </>
             ) : (
