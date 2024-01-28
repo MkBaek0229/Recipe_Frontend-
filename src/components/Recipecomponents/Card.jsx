@@ -47,11 +47,37 @@ function Card({ list }) {
     // API 호출을 통해 레시피 상세 정보를 업데이트하거나 필요한 다른 작업을 수행할 수 있습니다.
   };
 
+  // 클릭 이벤트 핸들러 함수
+  const handleCardClick = () => {
+    const confirmDelete = window.confirm('이 레시피를 삭제하시겠습니까?');
+
+    if (confirmDelete) {
+      handleDelete();
+    }
+  };
+
+  // 카드 삭제 함수
+  const handleDelete = () => {
+    // 삭제할 데이터의 ID
+    const recipeId = list.recipe_id; 
+
+    // 삭제 요청
+    axios.delete(`https://recipe-backend.fly.dev/api/v1/recipes/${recipeId}`)
+      .then((response) => {
+          // 삭제 성공 시 필요한 작업 수행
+          console.log('카드 삭제 성공:', response.data);
+      })
+      .catch((error) => {
+          // 삭제 실패 시 에러 처리
+          console.error('카드 삭제 에러:', error);
+      });
+  };
+  
   return (
     <div className="container mx-auto">
       <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
         <li className="aspect-[100/50] object-cover w-full">
-          <div className="block max-w-sm p-6 rounded-lg shadow hover:bg-gray-800 bg-gray-400 dark:border-gray-700 dark:hover:bg-gray-700">
+          <div className="block max-w-sm p-6 rounded-lg shadow hover:bg-gray-800 bg-gray-400 dark:border-gray-700 dark:hover:bg-gray-700" onClick={handleCardClick}>
             {isEditing ? (
               <>
                 <input
@@ -93,7 +119,7 @@ function Card({ list }) {
                 onClick={handleCancelEdit}
               >
                 취소
-              </button>
+              </button> 
             )}
           </div>
         </li>
