@@ -1,4 +1,4 @@
-import Masonry from "./Masonry";
+import Masonry from "./Card";
 import Menubutton from "../Menubutton";
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Headerbar() {
 
     return (  
-    <div className="border border-solid border-black relative min-w-[100%] p-3 mx-auto">
+    <div className="border border-solid border-black relative min-w-[100%] p-3 mx-auto mb-8">
         <Link to={'/'}><Menubutton name="뒤로가기"/></Link>
         <Link to={'/myrecipe'}><Menubutton name="내 레시피"/></Link>
         <Link to={'/makerecipe'}><Menubutton name="레시피 만들기"/></Link>

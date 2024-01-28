@@ -2,6 +2,8 @@ import { useEffect , useState} from "react";
 import React from "react";
 import Headerbar from "../../components/Recipecomponents/Headerbar";
 import axios from "axios";
+import Card from "../../components/Recipecomponents/Card";
+
 
 function Myrecipe() {
     const [Rlist, setRlist] = React.useState([]);
@@ -20,13 +22,12 @@ function Myrecipe() {
             console.log(error);
         });
     }
+    
     return (  
-        <div>
+        <div>   
             <Headerbar />
                 {Rlist.map((list) => (
-                    <h1 key={list.recipe_id}>
-                        {list.field} - {list.description} - {list.cooking_time}
-                    </h1>
+                      <Card list={list} />
                 ))}
 
           
