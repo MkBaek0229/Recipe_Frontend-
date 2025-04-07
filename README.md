@@ -1,51 +1,59 @@
-# 나만의 레시피 기록 웹앱
+<div align="center">
 
-## Front End 작업내역순서
+<!-- logo -->
 
-### 1. 최초 파일셋팅 (Page 폴더생성)
+### 나만의 레시피 만들기  🖍️
 
-### 2. 테일윈드 css 도입
+[<img src="https://img.shields.io/badge/-readme.md-important?style=flat&logo=google-chrome&logoColor=white" />]()  
+ [<img src="https://img.shields.io/badge/프로젝트 기간-2023.1.23~2024.02.01-fab2ac?style=flat&logo=&logoColor=white" />]()
 
-- [x] 테일윈드 패키지 설치
-- [x] 설정 파일 추가
+</div>
 
-```
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
+## 📝 소개
 
-- [x] tailwind.config.js에 다음 내용 추가
+나만의 레시피를 작성하고 공유해보아요
 
-```
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
+# 프로젝트 소개
 
-- [x] 내 css파일에 다음 내용 추가 index.css
+    - 나만의 음식 레시피를 자유롭게 작성하고 공유하는 서비스입니다. 
 
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
+<br />
 
-### 3. React router 도입
+### 프로젝트에서 담당한 Part
 
-```
-npm install react-router-dom
-```
+|                                                                               프론트엔드 UI 개발                                                                            |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                     <img src="https://github.com/user-attachments/assets/aa9e5680-ad04-45b3-bd39-80fbc4997f17" width="1024"/>                                     |
+|                                     <img src="https://github.com/user-attachments/assets/5008cc93-fe1e-40cd-bb84-8081180d2afb" width="1024"/>                                     |
+|                                     <img src="https://github.com/user-attachments/assets/18c4247f-9781-4f2e-8c08-1665d73af3d0" width="1024"/>                                     |
+| 프론트엔드 개발자로서 React 라이브러리를 사용하여 컴포넌트 기반 설계, React Router를 활용한 SPA 방식의 UI 렌더링, 그리고 API 비동기 처리를 통해 레시피 작성 웹사이트의 UI를 개발하였습니다.                              |
 
-### 4. HTTP 요청을 위한 axios 도입
 
-```
-npm install axios
-```
+
+
+## 개발환경
+
+### 기술 스택
+
+<div>
+<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/JavaScript.png?raw=true" width="80">
+<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/React.png?raw=true" width="80">
+<img src="https://github.com/user-attachments/assets/e8ab2060-d994-4148-bdd5-03479cce0c0e" width="80">
+
+</div>
+
+### Tools
+
+<img src="https://github.com/user-attachments/assets/b0a7e506-2ef8-4efd-b834-f273dd9be5d3" width="80">
+</div>
+
+<br />
+
+## 🤔 기술적 이슈와 해결 과정 (트러블슈팅)
+
+<details>
+  <summary><b>이벤트 전파 문제</b></summary>
+  <div markdown="1">
+   https://github.com/MWTeamB/Recipe_Frontend-/issues/4
+  </div>
+</details>
